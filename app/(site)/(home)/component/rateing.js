@@ -80,7 +80,7 @@ export default function Rateing() {
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 10 },
-            550: { slidesPerView: 2, spaceBetween: 10 },
+            540: { slidesPerView: 2, spaceBetween: 10 },
             968: { slidesPerView: 3, spaceBetween: 16 },
             1024: { slidesPerView: 3, spaceBetween: 16 },
           }}

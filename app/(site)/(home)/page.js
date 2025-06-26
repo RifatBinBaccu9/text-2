@@ -1,3 +1,4 @@
+"use client";
 import BestSeller from "./component/bestSeller";
 import DealsOfTime from "./component/DealsOfTime";
 import Hero from "./component/hero";
@@ -12,9 +13,8 @@ const Home = () => {
       <Hero />
       <ProductCategories />
       <BestSeller />
-      <DealsOfTime />
+      {/* <DealsOfTime /> */}
       <Rateing />
-      <InstagramStories />
       <Services />
     </div>
   );

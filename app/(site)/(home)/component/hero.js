@@ -29,9 +29,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="container mt-[50px] sm:mt-[80px] lg:mt-[116px] w-full max-h-[400px] grid grid-cols-4 gap-4">
+    <div className="container lg:h-[400px] mt-[65px] sm:mt-[96px] md:mt-[98px] lg:mt-[116px] w-full grid lg:grid-cols-4 grid-cols-1 sm:gap-4 gap-2">
       {/* Left side - Main Swiper */}
-      <div className="col-span-3 relative">
+      <div className="lg:col-span-3 relative">
         <Swiper
           loop={true}
           autoplay={{
@@ -43,23 +43,23 @@ const Hero = () => {
           }}
           modules={[Pagination, Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          className="_hero_pagination w-full h-[400px] rounded-xl overflow-hidden"
+          className="_hero_pagination w-full rounded-xl overflow-hidden"
         >
           {data.map((item) => (
-            <SwiperSlide key={item.id} className="!h-[400px] relative">
+            <SwiperSlide key={item.id}>
               <Image
                 src={item.image}
                 alt={`Slide ${item.id}`}
                 width={1000}
                 height={1000}
-                className="w-full h-full object-cover"
+                className="w-full lg:h-[400px] md:h-[350px] sm:h-[300px] h-[200px]"
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Navigation buttons */}
-        <div className="absolute bottom-5 right-5 flex items-center justify-end gap-4 z-40">
+        <div className="absolute bottom-5 right-5 hidden sm:flex items-center justify-end gap-4 z-40">
           <button
             className="bg-bgNormal hover:bg-bgHover text-white hover:text-textHover border border-[#FADADD] shadow-md hover:shadow-lg px-4 py-2 rounded-lg transition duration-300"
             onClick={handlePrevSlide}
@@ -76,20 +76,20 @@ const Hero = () => {
       </div>
 
       {/* Right side - Static images */}
-      <div className="h-[400px] grid grid-rows-2 gap-4">
+      <div className="grid lg:grid-cols-1 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-2">
         <Image
           src="/ds1.jpg"
           alt="Right Image 1"
           width={1000}
           height={1000}
-          className="w-full h-full object-cover rounded-xl"
+          className="w-full h-[192px] rounded-xl"
         />
         <Image
           src="/ds2.webp"
           alt="Right Image 2"
           width={1000}
           height={1000}
-          className="w-full h-full object-cover rounded-xl"
+          className="w-full h-[192px] rounded-xl"
         />
       </div>
     </div>

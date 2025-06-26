@@ -5,6 +5,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -12,15 +13,20 @@ export default {
         nunito: ["Nunito Sans", "sans-serif"],
       },
       colors: {
-        textNormal: "#2E2E2E",
-        textHover: "#FFECEC",
-        description: "#A4A2AA",
-        bgNormal: "#FF4D6D",
-        bgHover: "#D90452",
-        cardBg: "#FFF0F5",
-        cardBorder: "#FFC0CB",
-      },
+      textNormal: "#2E2E2E",
+      textHover: "#FFECEC",
+      description: "#A4A2AA",
+      bgNormal: "#FF4D6D",
+      bgHover: "#D90452",
+      cardBg: "#FFF0F5",
+      cardBorder: "#FFC0CB",
+    },
+      screens: {
+        'xs': '576px',
+      }
     },
   },
-  plugins: [],
+   plugins: [
+    require("tailwind-scrollbar-hide"),
+  ],
 };

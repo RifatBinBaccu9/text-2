@@ -21,15 +21,15 @@ const Story = () => {
       <Breadcrumb title={"About Us"} subtitle={"Home"} page={page} />
       <div className="container my-8 md:my-[72px]">
         <div className=" flex flex-col-reverse lg:flex-row justify-between items-center gap-6 lg:gap-10 xl:gap-[136px]">
-          <div className="w-full lg:w-[536px]">
+          <div className="w-full lg:w-[536px] mt-6 lg:mt-0">
             <Link
               href={"#"}
-              className="text-sm font-semibold px-4 py-2 bg-bulu text-white rounded-sm"
+              className="text-sm font-semibold px-4 py-2 bg-bulu bg-cardBorder rounded-sm"
             >
               WHO WE ARE
             </Link>
             <h1
-              className="text-2xl sm:text-4xl lg:text-3xl xl:text-4xl font-bold mt-10 mb-6"
+              className="text-2xl sm:text-4xl lg:text-3xl xl:text-4xl font-bold mt-10 mb-6 text-textNormal"
             >
               Your Trusted Source for Pure Cumin – Premium Quality Delivered
               with Ease!
@@ -43,7 +43,7 @@ const Story = () => {
               {
                 services.map((item, index) => (
                   <li key={index} className="flex flex-row items-center mb-4 gap-3">
-                    <BsCheckAll className="w-6 h-6 text-bulu" />
+                    <BsCheckAll className="w-6 h-6 text-bgNormal" />
                     <span className="text-base font-normal">{item.title}</span>
                   </li>
                 ))
@@ -61,7 +61,7 @@ const Story = () => {
             />
           </div>
         </div>
-        <Services />
+        <Services className={"!my-[50px] lg:!my-[100px]"} />
       </div>
     </div>
   );

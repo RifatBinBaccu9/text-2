@@ -2,6 +2,7 @@
 import { DatePicker, Form, Input } from 'antd';
 import { useState } from 'react';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { FaRegEye } from 'react-icons/fa';
 
 const FormInput = ({
   label,
@@ -47,7 +48,7 @@ const FormInput = ({
   if (textArea) {
     input = (
       <textarea
-        className="form-input"
+        className={`form-input ${className}`}
         placeholder={placeholder}
         readOnly={readOnly}
         rows={rows}
@@ -56,16 +57,12 @@ const FormInput = ({
     );
   }
 
-  if (type === 'date') {
-    input = <DatePicker className={`form-input ${className}`} onChange={onChange} />;
-  }
-
   if (type?.trim() === 'password') {
     input = (
       <Input.Password
         className={`form-input ${className}`}
         placeholder={placeholder}
-        iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+        iconRender={visible => (visible ? <FaRegEye /> : <EyeInvisibleOutlined />)}
         onChange={onChange}
         value={value}
         readOnly={readOnly}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { Button } from "@/app/component/common/button";
+import { Tooltip } from "antd";
 
 const DealsOfTime = () => {
   const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
@@ -44,21 +45,21 @@ const DealsOfTime = () => {
 
   return (
     <section className="container lg:mt-[150px] md:mt-[120px] mt-[60px]">
-      <div className="grid md:grid-cols-2 items-center gap-10 bg-white rounded-2xl overflow-hidden">
+      <div className="md:grid md:grid-cols-2 flex flex-col-reverse items-center md:gap-4 lg:gap-8 xl:gap-10 bg-white rounded-2xl overflow-hidden">
         {/* Left Content */}
-        <div className="p-8">
+        <div className="p-4 mb-8 md:mb-0">
           <h2 className="text-3xl lg:text-4xl font-bold text-textNormal mb-4">
             Deals of the Month
           </h2>
-          <p className="text-description mb-6">
+          <Tooltip title={"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters."} className="text-description mb-6 line-clamp-4">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
             distribution of letters.
-          </p>
+          </Tooltip>
 
           {/* Countdown Timer */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 mb-8">
+          <div className="grid grid-cols-4 justify-between gap-4 mb-8">
             {[
               { label: "Days", value: timeLeft.d },
               { label: "Hours", value: timeLeft.h },
@@ -67,7 +68,7 @@ const DealsOfTime = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 text-textNormal rounded-xl shadow-md hover:shadow-xl transition"
+                className="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 text-textNormal rounded-xl shadow-md hover:shadow-xl transition"
               >
                 <span className="text-xl sm:text-2xl font-bold">{item.value}</span>
                 <span className="text-xs sm:text-sm mt-1">{item.label}</span>
@@ -84,7 +85,7 @@ const DealsOfTime = () => {
         </div>
 
         {/* Right Side Image */}
-        <div className="w-full h-full bg-[#F3F4F6]">
+        <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-[#F3F4F6]">
           <Image
             src="/DealsOfMonthImage.png"
             alt="Deals Of The Month"

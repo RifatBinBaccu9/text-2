@@ -1,3 +1,5 @@
+"use client";
+import { Tooltip } from "antd";
 import React from "react";
 
 const ServiceCard = ({ service }) => {
@@ -11,9 +13,9 @@ const ServiceCard = ({ service }) => {
       <h3 className="mt-4 text-lg font-semibold text-textNormal group-hover:text-bgHover">
         {title}
       </h3>
-      <p className="mt-2 text-sm text-description leading-relaxed">
+      <Tooltip title={paragraph} className="mt-2 text-sm cursor-help text-description leading-relaxed line-clamp-2 h-10">
         {paragraph}
-      </p>
+      </Tooltip>
     </div>
   );
 };

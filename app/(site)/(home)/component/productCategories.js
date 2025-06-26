@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -60,8 +59,8 @@ export default function ProductCategories() {
         loop={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 10 },
-          480: { slidesPerView: 2.2, spaceBetween: 10 },
+          320: { slidesPerView: 2, spaceBetween: 12 },
+          480: { slidesPerView: 3, spaceBetween: 12 },
           768: { slidesPerView: 3, spaceBetween: 16 },
           1024: { slidesPerView: 4, spaceBetween: 16 },
           1280: { slidesPerView: 5, spaceBetween: 16 },

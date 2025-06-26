@@ -1,3 +1,4 @@
+"use client";
 import { FaInstagram, FaHeadset, FaCreditCard } from "react-icons/fa";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import ServiceCard from "./serviceCard";
@@ -29,10 +30,10 @@ const services = [
   },
 ];
 
-const Services = () => {
+const Services = ({className}) => {
   return (
-    <section className="container my-[50px] md:my-[100px] px-4">
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+    <section className={`container my-[50px] md:my-[100px] px-4 ${className}`}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} />
         ))}

@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/app/component/common/button";
 import ProductCard from "../../shop/productCard";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -6,15 +7,12 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const bestSeller = [
   {
     id: 1,
-    image: "/product1.png",
-    title: "Roadstar",
-    description: "Printed Cotton T-Shirt",
-    price: 150,
-    discount: "$10",
-    categoryItem: "Men",
-    color: "Red",
-    sub_description:
-      "Crafted from 100% premium cotton, this printed t-shirt offers unmatched breathability and comfort. Whether you're running errands or relaxing at home, its soft texture and vibrant print make it your everyday essential. The design is versatile, ensuring it pairs easily with jeans, shorts, or joggers. It's the perfect addition to your casual wardrobe for effortless style.",
+    image: "/product2.png",
+    hoverImage: "/product3.png",
+    title: "Colorful Pattern Shirt",
+    price: 499,
+    discount: 599,
+    description: "Premium cotton T-shirt with vibrant colors. these running shoes feature cushioned soles and breathable mesh. Ideal for daily wo"
   },
   {
     id: 2,
@@ -149,7 +147,7 @@ const BestSeller = () => {
         <Button text={"All Product"} href={"/shop"} icon={<FaArrowRightLong />}/>
       </div>
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 rounded-md">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-4 gap-3 rounded-md">
         {bestSeller.slice(0, 8).map((product, idx) => (
           <ProductCard key={idx} bestSellers={product} />
         ))}

@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
@@ -17,11 +18,11 @@ const Breadcrumb = ({ title, page }) => {
           {page.map((item, index) => (
             <div key={index} className="flex flex-row items-center gap-[7px]">
               <span className="flex flex-row items-center gap-[7px] font-jost font-normal text-sm md:text-base">
-                <IoHome className={`text-sm md:text-base ${ index == 0 ? "" : "hidden"}`} />
-                <Link href={item.link}>{item.title}</Link>
+                <IoHome className={`text-sm md:text-base text-bgHover ${ index == 0 ? "" : "hidden"}`} />
+                <Link href={item.link} className="text-bgNormal">{item.title}</Link>
               </span>
               <div className={` ${page.length == index + 1 ? "hidden" : ""}`}>
-                <IoIosArrowForward className="text-sm md:text-base" />
+                <IoIosArrowForward className="text-sm md:text-base text-textNormal" />
               </div>
             </div>
           ))}

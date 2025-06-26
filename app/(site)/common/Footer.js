@@ -6,6 +6,7 @@ import { GrLocation } from "react-icons/gr";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
+import { Tooltip } from "antd";
 
 const information = [
   { title: "My Account", link: "/myAccount" },
@@ -29,7 +30,7 @@ const peyment = [
 ];
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-white pt-[50px]">
+    <footer className="bg-[#1F1F1F] text-white pt-[50px]">
       <div className="container">
         <div className="lg:flex justify-between  w-full lg:gap-[100px] ">
           <div>
@@ -42,58 +43,58 @@ const Footer = () => {
             />
             <div className="flex flex-wrap lg:flex-col sm:flex-row lg:justify-start justify-between gap-6 mb-6 lg:mb-0">
               <p className="flex gap-2">
-                <MdOutlinePhoneInTalk className=" w-6 h-6" />
+                <MdOutlinePhoneInTalk className="text-bgNormal w-6 h-6" />
                 <span className="text-base  font-normal lg:w-[258px] w-full">
                   (704) 555-0127
                 </span>
               </p>
               <p className="flex gap-2">
-                <MdOutlineMail className=" w-6 h-6" />
-                <span className="text-base  font-normal lg:w-[258px] w-full">
+                <MdOutlineMail className="text-bgNormal w-6 h-6" />
+                <Tooltip title={"krist@example.com"} className="text-base  font-normal lg:w-[258px] w-full line-clamp-1 cursor-help">
                   krist@example.com
-                </span>
+                </Tooltip>
               </p>
               <p className="flex gap-2">
-                <GrLocation className=" w-6 h-6" />
-                <span className="text-base  font-normal lg:w-[258px] w-full">
+                <GrLocation className="text-bgNormal w-6 h-6" />
+                <Tooltip title={"3891 Ranchview Dr. Richardson, California 62639"} className="text-base cursor-help line-clamp-2 font-normal lg:w-[258px] w-full">
                   3891 Ranchview Dr. Richardson, California 62639
-                </span>
+                </Tooltip>
               </p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 grid-cols-4 sm:justify-between justify-center lg:gap-0 gap-4">
             <div className="sm:col-span-1 col-span-2 text-base text-white">
-              <h3 className="font-bold">Information</h3>
+              <h3 className="font-bold text-bgNormal">Information</h3>
               <ul className="flex flex-col gap-4 font-normal mt-5">
                 {information.map((info, idx) => (
                   <li key={idx}>
-                    <Link href={info.link}>{info.title}</Link>
+                    <Link href={info.link} className="hover:text-bgNormal">{info.title}</Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="sm:col-span-1 col-span-2 text-base text-white">
-              <h3 className="font-bold">Service</h3>
+              <h3 className="font-bold text-bgNormal">Service</h3>
               <ul className="flex flex-col gap-4 font-normal mt-5">
                 {service.map((service, idx) => (
                   <li key={idx}>
-                    <Link href={service.link}>{service.title}</Link>
+                    <Link href={service.link} className="hover:text-bgNormal">{service.title}</Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="sm:col-span-1 col-span-4 sm:mt-0 mt-5">
-              <h1 className="text-base font-bold">Subscribe</h1>
-              <p className="py-5 font-normal">
+              <h1 className="text-base font-bold text-bgNormal">Subscribe</h1>
+              <p className="py-5 font-normal line-clamp-3">
                 Enter your email below to be the first to know about new
                 collections and product launches.
               </p>
               <form >
                 <label
                   htmlFor="emailSub"
-                  className="border border-white bg-black  flex items-center select-none py-3 px-4 rounded-lg"
+                  className="border border-bgNormal hover:border-bgHover focus-within:bg-black bg-black flex items-center select-none py-3 px-4 rounded-lg"
                 >
-                  <HiOutlineMail className="w-6 h-6 cursor-pointer" />
+                  <HiOutlineMail className="w-6 h-6 cursor-pointer text-bgNormal" />
                   <input
                     type="email"
                     id="emailSub"
@@ -101,7 +102,7 @@ const Footer = () => {
                     className="text-base  font-normal outline-none  border-none bg-black w-full  px-[12px]"
                   />
                   <button type="submit">
-                    <FaArrowRightLong className="w-5 h-5 cursor-pointer" />
+                    <FaArrowRightLong className="w-5 h-5 cursor-pointer text-bgNormal" />
                   </button>
                 </label>
               </form>
@@ -126,7 +127,7 @@ const Footer = () => {
               &copy; 2023 Shop All Rights are reserved️.
           </div>
 
-          <div className="sm:flex md:text-2xl items-center text-lg gap-5 hidden ">
+          <div className="text-white sm:flex md:text-2xl items-center text-lg gap-5 hidden ">
             <FaFacebookF />
             <FaInstagram />
             <FaTwitter />

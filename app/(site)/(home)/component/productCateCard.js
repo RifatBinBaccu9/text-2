@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,7 +6,7 @@ const ProductCateCard = ({ category }) => {
   const { id, image, title } = category;
 
   return (
-    <div className="group relative bg-cardBg p-3 rounded-[10px] border border-cardBorder hover:border-bgNormal h-[180px] sm:h-[250px] transition-all duration-300 shadow-sm hover:shadow-lg overflow-hidden">
+    <div className="group relative bg-cardBg p-3 rounded-[10px] border border-cardBorder hover:border-bgNormal h-[180px] sm:h-[200px] md:h-[250px] transition-all duration-300 shadow-sm hover:shadow-lg overflow-hidden">
 
       {/* Category Image */}
       <Image

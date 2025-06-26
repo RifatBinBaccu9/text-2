@@ -4,6 +4,7 @@ import { Pagination, Tooltip } from "antd";
 import { useState } from "react";
 import BlogCard from "./blogCard";
 import Breadcrumb from "@/app/component/common/breadcrumb";
+import FormInput from "@/app/component/from/input";
 
 const blogs = [
   {
@@ -210,19 +211,13 @@ const paginatedBlogs = filteredBlogs.slice(startIndex, endIndex);
     <div className="header_top">
       <Breadcrumb title={"Blog"} page={page} />
       <section className="container my-8 md:my-[72px] ">
-        <div className=" flex flex-col sm:flex-row justify-between">
-          <h1 className="text-2xl md:text-3xl xl:text-4xl font-bold font-poppins mb-5 sm:mb-0">
+        <div className=" flex flex-col sm:flex-row justify-between items-center sm:items-start">
+          <h1 className="text-3xl xl:text-4xl font-bold font-poppins mb-5 sm:mb-0 text-textNormal">
             Our Latest News
           </h1>
-          <div className="px-1 sm:px-4 py-2  sm:py-3 select-none flex flex-row items-center border border-[#2c2b2b] rounded-md">
-            <input
-              type="text"
-              placeholder="Search..."
-              className=" outline-none bg-[#fff] w-full lg:w-[400px]"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <IoSearch />
+
+          <div className="">
+            <FormInput type={"text"} placeholder={"Search product..."} className={"lg:!w-[430px] sm:!w-[400px] !w-[350px] !py-3 focus:!border-bgNormal !border-cardBorder"} icon={<IoSearch />} />
           </div>
         </div>
 
